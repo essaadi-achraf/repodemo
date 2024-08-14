@@ -39,9 +39,6 @@ public class FactureService {
 
     }
 
-    public Facture getReferenceById(Integer integer) {
-        return factureDao.getReferenceById(integer);
-    }
 
     public Facture findByCode(String code) {
         return factureDao.findByCode(code);
@@ -50,8 +47,11 @@ public class FactureService {
     public List<Facture> findByCodeLikeAndPrixGreaterThan(String code, Double prix) {
         return factureDao.findByCodeLikeAndPrixGreaterThan(code, prix);
     }
+    public  List<Facture> findByClientCin(String cin) { return factureDao.findByClientCin(cin); }
+
 
     @Autowired
     private FactureDao factureDao;
+
 
 }

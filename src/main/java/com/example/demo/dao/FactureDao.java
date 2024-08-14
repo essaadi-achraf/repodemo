@@ -13,4 +13,6 @@ public interface FactureDao extends JpaRepository<Facture, Integer> {
     Facture findByCode(String code);
 
       List<Facture> findByCodeLikeAndPrixGreaterThan(String code, Double prix);
+
+    List<Facture> findByClientCin(String cin) ;
 }

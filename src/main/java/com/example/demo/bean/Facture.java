@@ -1,18 +1,18 @@
 package com.example.demo.bean;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 
 public class Facture {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-     private String  code;
+    private String code;
     private double prix;
     private double prixtotal;
+    @ManyToOne
+    private Client client;
 
     public double getPrixtotal() {
         return prixtotal;
@@ -44,5 +44,13 @@ public class Facture {
 
     public void setPrix(double prix) {
         this.prix = prix;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 }

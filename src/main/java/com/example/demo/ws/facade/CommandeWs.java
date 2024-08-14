@@ -1,4 +1,4 @@
-package com.example.demo.ws;
+package com.example.demo.ws.facade;
 
 import com.example.demo.bean.Command;
 import com.example.demo.service.CommandService;
